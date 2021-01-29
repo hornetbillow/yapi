@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Button, Icon, Card } from 'antd';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import LogoSVG from '../../components/LogoSVG/index.js';
 import { changeMenuItem } from '../../reducer/modules/menu';
 const plugin = require('client/plugin.js');
 
@@ -24,7 +23,7 @@ const HomeGuest = () => (
           <Col span={24}>
             <div className="home-header">
               <a href="#" className="item">
-                YAPI
+                ISmart
               </a>
               <a
                 target="_blank"
@@ -41,8 +40,7 @@ const HomeGuest = () => (
           <Col lg={9} xs={24}>
             <div className="home-des">
               <div className="logo">
-                <LogoSVG length="72px" />
-                <span className="name">YAPI</span>
+                <span className="name">ISmart</span>
               </div>
               <div className="detail">
                 高效、易用、功能强大的API管理平台<br />
@@ -310,7 +308,7 @@ const HomeGuest = () => (
               接口管理的逻辑较为复杂，操作频率高，层层审批将严重拖慢生产效率，因此传统的金字塔管理模式并不适用。
             </p>
             <p className="desc">
-              YAPI
+              ISmart
               将扁平化管理模式的思想引入到产品的权限管理中，超级管理员拥有最高的权限，并将权限分配给若干组长，超级管理员只需管理组长即可，实际上管理YAPI各大分组与项目的是“组长”。组长对分组或项目负责，一般由BU负责人/项目负责人担任。
             </p>
           </Col>
@@ -337,7 +335,7 @@ class Home extends Component {
     super(props);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (this.props.login) {
       this.props.history.push('/group/261');
     }
